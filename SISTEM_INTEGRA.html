@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Robot AI - Maintenance Sistem</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Courier New", monospace;
+      color: #00e5ff;
+    }
+
+    /* Tempat gambar robot */
+    .robot {
+      width: 300px;
+      height: auto;
+      animation: headMove 3s infinite ease-in-out;
+      margin-bottom: 20px;
+    }
+
+    @keyframes headMove {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+    /* Progress line */
+    .progress {
+      width: 600px;
+      height: 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 10px;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #00e5ff, #76ff03, #c6ff00);
+      animation: fillBar 3s linear infinite;
+    }
+    @keyframes fillBar {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    /* Console log */
+    .console {
+      margin-top: 20px;
+      width: 600px;
+      height: 250px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00e5ff;
+      padding: 20px;
+      overflow-y: auto;
+      font-size: 1em;
+    }
+
+    .title {
+      color: #76ff03;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      text-align: center;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { color: #76ff03; }
+      50% { color: #c6ff00; }
+      100% { color: #76ff03; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ganti link gambar robot di bawah ini -->
+  <img src="https://i.imgur.com/mxt7Vn6.png" alt="Robot AI" class="robot">
+
+  <div class="title">🤖 Siber Aktif!! Sistem terjaga ketat, Validasi Succes...</div>
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="console" id="console"></div>
+
+  <script>
+    const consoleEl = document.getElementById("console");
+    const codes = [
+      "Scanning internal network protocols...",
+      "Verifying encryption layers...",
+      "Checking firewall integrity...",
+      "Analyzing data flow consistency...",
+      "No vulnerabilities detected.",
+      "System integrity: 100%",
+      "Running deep security audit...",
+      "AI neural link stable ✔",
+      "Quantum encryption active ✔",
+      "System status: SECURE ✅"
+    ];
+
+    function randomCode() {
+      const random = codes[Math.floor(Math.random() * codes.length)];
+      const timestamp = new Date().toLocaleTimeString();
+      return `[${timestamp}] ${random}`;
+    }
+
+    function loopLogs() {
+      consoleEl.innerHTML += randomCode() + "<br>";
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+      setTimeout(loopLogs, 700);
+    }
+
+    loopLogs();
+  </script>
+</body>
+</html>
