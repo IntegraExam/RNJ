@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pemberitahuan Ujian</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #283048, #859398);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .notice {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .notice h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #ffeb3b;
+      animation: pulse 2s infinite;
+    }
+    .notice p {
+      font-size: 1.2em;
+      margin: 0;
+      color: #e0f7fa;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { color: #ffeb3b; }
+      50% { color: #ffc107; }
+      100% { color: #ffeb3b; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <h1>⏳ Mapel Ujian Belum Dibuka</h1>
+    <p>Silakan hubungi pengawas ujian di ruangan Anda untuk informasi lebih lanjut.</p>
+  </div>
+</body>
+</html>
+
